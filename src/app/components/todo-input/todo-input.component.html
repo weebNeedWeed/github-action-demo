@@ -1,0 +1,3 @@
+<form class="task-input" #form="ngForm" (ngSubmit)="onSubmit()">
+  <input type="text" class="form-control task-input__input" placeholder="Enter task" [(ngModel)]="todo" name="todo" />
+</form>
