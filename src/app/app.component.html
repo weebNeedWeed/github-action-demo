@@ -2,7 +2,7 @@
   <h1 class="title">Todo-app</h1>
   <todo-input (addNewTodo)="onAddNewTodo($event)"></todo-input>
 
-  <ul *ngIf="todos.length">
-    <li *ngFor="let todo of todos">{{todo.name}}</li>
-  </ul>
+  <todo-list (changeName)="onNameChange($event)" [todos]="todos" (delete)="onDelete($event)"
+    (changeProgressStatus)="onChangeProgressStatus($event)">
+  </todo-list>
 </div>

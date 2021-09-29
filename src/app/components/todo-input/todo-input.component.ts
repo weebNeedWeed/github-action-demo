@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'todo-input',
@@ -10,12 +11,11 @@ export class TodoInputComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public todo: string = '';
-
   @Output()
   public addNewTodo = new EventEmitter();
 
-  onSubmit() {
-    this.addNewTodo.emit(this.todo);
+  onSubmit(form: NgForm) {
+    this.addNewTodo.emit(form.value.todo);
+    form.resetForm();
   }
 }
