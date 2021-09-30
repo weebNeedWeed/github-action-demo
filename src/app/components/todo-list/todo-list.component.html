@@ -5,8 +5,8 @@
     <input class="todo-item__checkbox" type="checkbox" [ngModel]="todo.isDone" (click)="$event.stopPropagation();"
       (ngModelChange)="onChange(i,$event)">
 
-    <input type="text" class="todo-item__input" [value]="todo.name" #input (focus)="index = i"
-      [class.todo-item__input--done]="todo.isDone" (keyup.enter)="onNameChange(i,input.value)">
+    <input type="text" class="todo-item__input" [ngModel]="todo.name" #input (focus)="index = i"
+      [class.todo-item__input--done]="todo.isDone" (ngModelChange)="onNameChange(i,input.value)">
 
     <button class="todo-item__delete" (click)="onDelete($event, i)">X</button>
 
